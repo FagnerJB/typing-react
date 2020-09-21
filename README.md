@@ -1,3 +1,3 @@
 # Typing Game on React
 
-Small test on React for a full game.
+A prototype for testing React as a engine for a full game.
