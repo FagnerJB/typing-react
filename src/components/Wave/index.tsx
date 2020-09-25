@@ -6,7 +6,7 @@ import Words from './Words'
 
 function Wave() {
 
-    const { wave, words, setLetter, setWave, setWords } = useContext(TypingContext)
+    const { wave, setLetter, setWave } = useContext(TypingContext)
 
     const difficulties = [{
         easy: 4, fair: 1
@@ -19,57 +19,57 @@ function Wave() {
     }, {
         easy: 5, fair: 4, hard: 3, epic: 2
     }, {
-        easy: 4, fair: 5, hard: 4, epic: 2, boss: 1,
+        easy: 4, fair: 5, hard: 4, epic: 2, boss: 1
     }, {
-        easy: 3, fair: 5, hard: 5, epic: 3, boss: 1,
+        easy: 3, fair: 5, hard: 5, epic: 3, boss: 1
     }, {
-        easy: 2, fair: 6, hard: 5, epic: 3, boss: 1,
+        easy: 2, fair: 6, hard: 5, epic: 3, boss: 1
     }, {
-        easy: 2, fair: 6, hard: 5, epic: 4, boss: 2,
+        easy: 2, fair: 6, hard: 5, epic: 4, boss: 2
     }, {
-        easy: 1, fair: 5, hard: 6, epic: 5, boss: 2,
+        easy: 1, fair: 5, hard: 6, epic: 5, boss: 2
     }, {
-        easy: 1, fair: 5, hard: 6, epic: 5, boss: 3,
+        easy: 1, fair: 5, hard: 6, epic: 5, boss: 3
+    }, {
+        easy: 1, fair: 5, hard: 17, epic: 23
     }]
 
-    document.addEventListener("keydown", (e) => {
-        if ("Enter" === e.key && wave === -1) {
-            e.preventDefault()
-            setWave(0)
-        }
-        if (/^[a-zA-Z]$/.test(e.key) && wave >= 0) {
-            e.preventDefault()
-            const letter = e.key.toLowerCase()
-            setLetter(letter)
-        }
-    })
-
-    document.addEventListener("keyup", (e) => {
-        if (/^[a-zA-Z]$/.test(e.key) && wave >= 0) {
-            setLetter("")
-        }
-    })
-
     useEffect(() => {
 
-        if (wave >= 0)
-            setWords(Object.values(difficulties[wave]).reduce((p: number, c: number | undefined) => c ? p + c : p, 0))
+        function handleKeydown(e: KeyboardEvent) {
+            if ("Enter" === e.key && wave === -1) {
+                e.preventDefault()
+                setWave(0)
+            }
+            if (/^[a-zA-Z]$/.test(e.key) && wave >= 0) {
+                e.preventDefault()
+                const letter = e.key.toLowerCase()
+                setLetter(letter)
+            }
+        }
 
-        // eslint-disable-next-line
+        function handleKeyup(e: KeyboardEvent) {
+            if (/^[a-zA-Z]$/.test(e.key) && wave >= 0) {
+                setLetter("")
+            }
+        }
+
+        document.addEventListener("keydown", handleKeydown)
+        document.addEventListener("keyup", handleKeyup)
+
+        return () => {
+
+            document.removeEventListener("keydown", handleKeydown)
+            document.removeEventListener("keyup", handleKeyup)
+
+        }
+
     }, [wave])
-
-    useEffect(() => {
-
-        if (words === 0 && wave <= 10)
-            setWave(wave + 1)
-
-        // eslint-disable-next-line
-    }, [words])
 
     if (wave === -2)
         return (
             <div className="start lost">
-                You lost - Press <span className="start__key">F5</span> to try again
+                You lost<br />Press <span className="start__key">F5</span> to try again
             </div>
         )
     else if (wave === -1)
@@ -80,10 +80,10 @@ function Wave() {
                 to start
             </div>
         )
-    else if (wave === 11)
+    else if (wave === 12)
         return (
             <div className="start won">
-                You won - Press <span className="start__key">F5</span> to try again
+                You won<br />Press <span className="start__key">F5</span> to try again
             </div>
         )
     else
