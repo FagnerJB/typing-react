@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/typing-react/static/css/main.aa6171ca.chunk.css",
-    "main.js": "/typing-react/static/js/main.89cac775.chunk.js",
-    "main.js.map": "/typing-react/static/js/main.89cac775.chunk.js.map",
-    "runtime-main.js": "/typing-react/static/js/runtime-main.3f88511f.js",
-    "runtime-main.js.map": "/typing-react/static/js/runtime-main.3f88511f.js.map",
-    "static/js/2.93b04960.chunk.js": "/typing-react/static/js/2.93b04960.chunk.js",
-    "static/js/2.93b04960.chunk.js.map": "/typing-react/static/js/2.93b04960.chunk.js.map",
-    "index.html": "/typing-react/index.html",
-    "precache-manifest.f14892673e96bb9963320927fb7ae312.js": "/typing-react/precache-manifest.f14892673e96bb9963320927fb7ae312.js",
-    "service-worker.js": "/typing-react/service-worker.js",
-    "static/css/main.aa6171ca.chunk.css.map": "/typing-react/static/css/main.aa6171ca.chunk.css.map",
-    "static/js/2.93b04960.chunk.js.LICENSE.txt": "/typing-react/static/js/2.93b04960.chunk.js.LICENSE.txt"
+    "main.css": "/typing-tests/react/static/css/main.aa6171ca.chunk.css",
+    "main.js": "/typing-tests/react/static/js/main.c2c75f05.chunk.js",
+    "main.js.map": "/typing-tests/react/static/js/main.c2c75f05.chunk.js.map",
+    "runtime-main.js": "/typing-tests/react/static/js/runtime-main.ac74edf8.js",
+    "runtime-main.js.map": "/typing-tests/react/static/js/runtime-main.ac74edf8.js.map",
+    "static/js/2.80df6875.chunk.js": "/typing-tests/react/static/js/2.80df6875.chunk.js",
+    "static/js/2.80df6875.chunk.js.map": "/typing-tests/react/static/js/2.80df6875.chunk.js.map",
+    "index.html": "/typing-tests/react/index.html",
+    "precache-manifest.be6a985f582b308734b54fa3766f8ce9.js": "/typing-tests/react/precache-manifest.be6a985f582b308734b54fa3766f8ce9.js",
+    "service-worker.js": "/typing-tests/react/service-worker.js",
+    "static/css/main.aa6171ca.chunk.css.map": "/typing-tests/react/static/css/main.aa6171ca.chunk.css.map",
+    "static/js/2.80df6875.chunk.js.LICENSE.txt": "/typing-tests/react/static/js/2.80df6875.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.3f88511f.js",
-    "static/js/2.93b04960.chunk.js",
+    "static/js/runtime-main.ac74edf8.js",
+    "static/js/2.80df6875.chunk.js",
     "static/css/main.aa6171ca.chunk.css",
-    "static/js/main.89cac775.chunk.js"
+    "static/js/main.c2c75f05.chunk.js"
   ]
 }
